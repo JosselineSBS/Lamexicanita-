@@ -57,6 +57,6 @@ Route::post('/login',[App\Http\Controllers\Auth\LoginController::class, 'handle'
 Route::post('/logout',[App\Http\Controllers\Auth\LogoutController::class, 'handle'])->name('logout.handle');
 
 // Middlewere de control de rutas para acceso de autentificación 
-Route::middkeware(['auth'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::resource(('/products'),App\Http\Controllers\ProductController::class);
 });
